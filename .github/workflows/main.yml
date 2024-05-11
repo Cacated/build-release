@@ -72,6 +72,12 @@ jobs:
         cd x-wrt
         echo -e "$(nproc) thread build."
         TARGET=ramips-mt7620 sh build.sh $(nproc)
+        cat .config
+        ls -la bin/targets/mt7620
+        echo "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+        cat bin/targets/mt7620/config.buildinfo
+        echo "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
+        cat bin/targets/mt7620/*/config.buildinfo
 
     - name : Upload make.log if failure
       uses: actions/upload-artifact@v3
